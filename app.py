@@ -90,7 +90,7 @@ def kiosco5():
     if request.method == "POST":
        
 
-        return redirect("/kiosco5")
+        return redirect("/kiosco6")
     else:
         #rows= db.execute("select * from users where id=:id",id=session["user_id"])
         return render_template("start.html")
@@ -100,10 +100,38 @@ def kiosco6():
     if request.method == "POST":
        
 
-        return redirect("/kiosco5")
+        return redirect("/t")
     else:
         #rows= db.execute("select * from users where id=:id",id=session["user_id"])
         return render_template("temp.html")
+
+@app.route("/t", methods=["GET", "POST"])
+def t():
+    if request.method == "POST":
+       
+
+        return redirect("/pesa")
+    else:
+        #rows= db.execute("select * from users where id=:id",id=session["user_id"])
+        Temperatura =random.uniform(35.5, 37.6)
+        Temperatura=round(Temperatura, 2)
+        session["Temperatura"] =Temperatura
+        return render_template("temp2.html")
+
+@app.route("/pesa", methods=["GET", "POST"])
+def t2():
+    if request.method == "POST":
+        pulso =random.uniform(95.1, 99.8)
+        pulso=round(pulso, 2)
+        session["pulso"] = pulso
+
+        return redirect("/")
+    else:
+        #rows= db.execute("select * from users where id=:id",id=session["user_id"])
+        peso =random.uniform(135.5, 170.8)
+        peso=round(peso, 2)
+        session["peso"] =peso
+        return render_template("pesos.html")
 
 @app.route("/kiosco2", methods=["GET", "POST"])
 def kiosco2():

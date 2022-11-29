@@ -19,19 +19,19 @@
             <div class="col">
                 <div class="1col">
                     <h2 class="greet1">
-                        Por favor <br> Acercate a <br> la camara!
+                       Dedo indíce <br> en el sensor <br> por favor!
                     </h2>
                     <img class="florenceimg" src="../static/Assets/florence.svg" alt="florence">
 
                 </div>
-                <form action="/kiosco6" method="post">
-                <button class="btn-2">
+                <form action="/pesa" method="post">
+                <button type="submit" class="btn-2">
                     Siguiente
                 </button>
             </form>
             </div>
             <div class="col">
-                <h1 class="temperaturah1">Temperatura </h1>
+                <h1 class="temperaturah1">Signos Vitales </h1>
                 <div class="row">
                     <div class="col">
                         <div class="datos">
@@ -52,7 +52,7 @@
                     <div class="col">
                         <div class="boxesdata1">
                         <img  class="boximg1" src="../static/Assets/temp.svg" alt="temp">
-                        <p class="infodatapagesource" name="tempresult">data</p>
+                        <p class="infodatapagesource" name="tempresult">{{session.Temperatura}}</p>
                     </div>
 
                     </div>
@@ -66,7 +66,7 @@
                     <div class="col">
                         <div class="boxesdata1">
                         <img class="boximg1"  src="../static/Assets/peso.svg" alt="temp">
-                        <p class="infodatapagesource" name="pesoresult">data</p>
+                        <p class="infodatapagesource" name="pesoresult">{{session.peso}}</p>
                         </div>
 
                     </div>
